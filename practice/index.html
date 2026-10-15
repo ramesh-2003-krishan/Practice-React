@@ -3,34 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Semantic Page</title>
+  <link rel="stylesheet" href="index.css" />
+  <title>Contact Form</title>
 </head>
 <body>
-  <header>
-    <h1>My Learning Journey</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-    </nav>
-  </header>
-
   <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am an intern learning React.</p>
-    </section>
+    <h1>Contact Me</h1>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <article>
-        <h3>Landing Page</h3>
-        <p>Coming at the end of Week 1.</p>
-      </article>
-    </section>
+    <form action="#" method="post">
+      <div>
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <br/>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <br/>
+      <div>
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+          <option value="general">General question</option>
+          <option value="project">Project help</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+      <br/>
+      <fieldset>
+        <legend>Preferred reply method</legend>
+        <input type="radio" id="reply-email" name="reply" value="email" checked />
+        <label for="reply-email">Email</label>
+        <input type="radio" id="reply-phone" name="reply" value="phone" />
+        <label for="reply-phone">Phone</label>
+      </fieldset>
+      <br/>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+      <br/>
+      <button type="submit">Send</button>
+    </form>
   </main>
-
-  <footer>
-    <p>&copy; 2026 My Name</p>
-  </footer>
 </body>
 </html>
