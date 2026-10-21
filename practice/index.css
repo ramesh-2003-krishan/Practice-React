@@ -5,52 +5,103 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  font-size: 1rem;
   background: #f4f6f8;
 }
 
-/* Whole page layout using grid areas */
-.page {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "header  header"
-    "sidebar content"
-    "footer  footer";
-  min-height: 100vh;
+/* ---------- Mobile first (default styles) ---------- */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 12px;
-  padding: 12px;
-}
-
-.header  { grid-area: header; }
-.sidebar { grid-area: sidebar; }
-.content { grid-area: content; }
-.footer  { grid-area: footer; }
-
-.header, .sidebar, .footer {
-  padding: 20px;
-  color: white;
+  padding: 16px;
   background: #1f3a5f;
-  border-radius: 8px;
+  color: white;
 }
 
-.content {
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
+.logo {
+  margin: 0;
+  font-size: 1.3rem;
 }
 
-/* Gallery grid */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.nav-links {
+  display: flex;
   gap: 16px;
 }
 
-.item {
-  padding: 40px;
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 16px;
+}
+
+.hero {
+  padding: 24px;
+  margin-bottom: 16px;
   text-align: center;
   background: #eaf1f8;
+  border-radius: 8px;
+}
+
+.hero h2 {
+  font-size: 1.4rem;
+}
+
+/* One column on small screens */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  padding: 30px;
+  text-align: center;
+  background: white;
   border: 2px solid #2e75b6;
   border-radius: 8px;
+}
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  color: white;
+  background: #1f3a5f;
+}
+
+/* ---------- Tablet: 600px and up ---------- */
+@media (min-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Desktop: 900px and up ---------- */
+@media (min-width: 900px) {
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
