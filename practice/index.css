@@ -5,19 +5,20 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  font-size: 1rem;
+  line-height: 1.6;
+  color: #1c2733;
   background: #f4f6f8;
 }
 
-/* ---------- Mobile first (default styles) ---------- */
+/* ---------- Navbar (Flexbox) ---------- */
 .navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
   padding: 16px;
-  background: #1f3a5f;
   color: white;
+  background: #1f3a5f;
 }
 
 .logo {
@@ -27,7 +28,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -35,23 +36,52 @@ body {
   text-decoration: none;
 }
 
-main {
-  padding: 16px;
+.nav-links a:hover {
+  text-decoration: underline;
 }
 
+/* ---------- Hero ---------- */
 .hero {
-  padding: 24px;
-  margin-bottom: 16px;
+  padding: 60px 20px;
   text-align: center;
-  background: #eaf1f8;
-  border-radius: 8px;
+  color: white;
+  background: #2e75b6;
 }
 
 .hero h2 {
-  font-size: 1.4rem;
+  margin-top: 0;
+  font-size: 1.6rem;
 }
 
-/* One column on small screens */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #1f3a5f;
+  text-decoration: none;
+  background: white;
+  border: 2px solid #1f3a5f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: white;
+  background: #1f3a5f;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.section h2 {
+  color: #1f3a5f;
+}
+
+/* ---------- Cards (Grid) ---------- */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -59,13 +89,44 @@ main {
 }
 
 .card {
-  padding: 30px;
-  text-align: center;
+  padding: 20px;
   background: white;
   border: 2px solid #2e75b6;
   border-radius: 8px;
 }
 
+.card h3 {
+  margin-top: 0;
+}
+
+/* ---------- Form ---------- */
+.form {
+  max-width: 500px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.field label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.field input,
+.field textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #aab7c4;
+  border-radius: 6px;
+}
+
+/* ---------- Footer ---------- */
 .footer {
   padding: 16px;
   text-align: center;
@@ -81,7 +142,7 @@ main {
   }
 
   .hero h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .cards {
@@ -91,14 +152,12 @@ main {
 
 /* ---------- Desktop: 900px and up ---------- */
 @media (min-width: 900px) {
-  main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 32px;
+  .hero {
+    padding: 90px 20px;
   }
 
   .hero h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .cards {
